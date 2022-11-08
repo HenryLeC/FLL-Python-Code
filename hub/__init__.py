@@ -1,0 +1,29 @@
+from typing import Tuple
+from . import battery
+from . import button
+from . import display
+from . import motion
+from . import port
+
+
+TOP = 0
+FRONT = 1
+RIGHT = 2
+BOTTOM = 3
+BACK = 4
+LEFT = 5
+
+__version__: str
+
+config: dict
+
+
+def info() -> dict: ...
+def status() -> dict: ...
+def power_off(fast=True, restart=False, timeout=0) -> None: ...
+def power_off(timeout=0) -> None: ...
+def repl_restart(restart: bool) -> None: ...
+def temperature() -> float: ...
+def led(color: int) -> None: ...
+def led(red: int, green: int, blue: int) -> None: ...
+def led(color: Tuple[int, int, int]) -> None: ...
